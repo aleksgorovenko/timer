@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIMER
+namespace СTIMER
 {
     class CTimer
     {
         private string name;
         private DateTime sought;
-
+        private int i;
         public CTimer(string st, DateTime t)
         {
             name = st;
@@ -22,27 +22,32 @@ namespace TIMER
             name = st;
             int sec = 0, min = 0, h = 0, day = 0;
             DateTime current = DateTime.UtcNow;
-            int i = (time.Length - 1);
-            sec = t(time, i);
-            min = t(time, i);
+            i = (time.Length - 1);
+            sec = t(time);
+            min = t(time);
             if (min == 0) min = current.Minute;
-            h = t(time, i);
+            //if (sec < current.Second) min++;
+            h = t(time);
             if (h == 0) h = current.Hour;
-            day = t(time, i);
+            day = t(time);
             if (day == 0) day = current.Day;
             sought = new DateTime(current.Year, current.Month, day, h, min, sec);
         }
 
-        public DateTime get_sought()
+        public DateTime get_sought()//Получение времени-
         {
             return sought;
         }
 
-        private int t(string st, int i)
+        public string get_name()//получение имени таймера
+        {
+            return name;
+        }
+        private int t(string st)//получение значения времени
         {
             int res = 0;
             int mn = 1;
-            while ((i >= 0) && (st[i] != ':'))
+            while ((i >= 0) && (st[i] != ':') && (st[i] != '.'))
             {
                 res += ((st[i] - 48) * mn);
                 mn *= 10;

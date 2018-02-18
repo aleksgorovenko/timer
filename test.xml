@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Timers>
+ <Timer>
+  <Name>Test1</Name>
+  <Time>12.12.12.12</Time>
+ </Timer>
+ <Timer>
+  <Name>Test2</Name>
+  <Time>12.17.12.12</Time>
+ </Timer>
+ <Timer>
+  <Name>Test3</Name>
+  <Time>07.23.15.12</Time>
+ </Timer>
+</Timers>
